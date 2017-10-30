@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
             button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
             buttonMul , button10 , buttonC , buttonEqual ;
+    EditText a;
+
 
     EditText edt1 ;
+    TextView display;
     //Completed Java Code
 
     float mValueOne , mValueTwo ;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
         edt1 = (EditText) findViewById(R.id.edt1);
+        display=(TextView) findViewById(R.id.display);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -159,27 +164,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mValueTwo = Float.parseFloat(edt1.getText() + "");
 
-                if (mAddition == true){
 
-                    edt1.setText(mValueOne + mValueTwo +"");
-                    mAddition=false;
+                if (mAddition == true) {
+
+                    mAddition = false;
+                    display.setText(mValueOne + "+" + mValueTwo + "=" + (mValueOne + mValueTwo) + "");
                 }
 
 
-                if (mSubtract == true){
-                    edt1.setText(mValueOne - mValueTwo+"");
-                    mSubtract=false;
+                if (mSubtract == true) {
+                    display.setText(mValueOne + "-" + mValueTwo + "=" + (mValueOne - mValueTwo) + "");
+                    mSubtract = false;
                 }
 
-                if (mMultiplication == true){
-                    edt1.setText(mValueOne * mValueTwo+"");
-                    mMultiplication=false;
+                if (mMultiplication == true) {
+                    display.setText(mValueOne + "*" + mValueTwo + "=" + (mValueOne * mValueTwo) + "");
+                    mMultiplication = false;
                 }
 
-                if (mDivision == true){
-                    edt1.setText(mValueOne / mValueTwo+"");
-                    mDivision=false;
+                if (mDivision == true) {
+                    display.setText(mValueOne + "/" + mValueTwo + "=" + (mValueOne / mValueTwo) + "");
+                    mDivision = false;
                 }
+
+
             }
         });
 
@@ -187,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 edt1.setText("");
+                display.setText("");
             }
         });
 

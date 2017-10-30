@@ -8,16 +8,25 @@
 
 
     <EditText
+        android:inputType="number"
         android:id="@+id/edt1"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_below="@+id/display"
         android:enabled="false"
         android:gravity="bottom"
+        android:lineSpacingExtra="10sp"
         android:lines="2"
         android:maxLines="2"
-        android:textSize="20sp"
+        android:textSize="30sp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button7"
